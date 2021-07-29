@@ -50,7 +50,7 @@ class firewall_node3 {
   * On Jump host: `puppet parser validate code.pp` and `puppet parser validate demo.pp`. You should not see any errors.
   * SSH to one of the appservers hosts and run `sudo puppet agent -tv --noop` first to dry-run the code. Check there are no issues.
   * Finally run `sudo puppet agent -tv` in each of the appserver hosts to implement the firewall changes. Note: No need to run `firewall-cmd --reload`. The puppet code automatically does that.
-  * check firewalld rule `firewall-cmd --zone=public --list-all` in each of the appserver hosts
+  * Check firewalld rule `firewall-cmd --zone=public --list-all` in each of the appserver hosts
 
 ## Verification
 * Run `curl http://<host>:<port>/` from Jump Host to the speific ports on each appserver (as per the question) to test connectivity e.g. `curl http://stapp01:3000/`. You should get back a valid HTML page as Apache is running on specific ports on each appserver.
